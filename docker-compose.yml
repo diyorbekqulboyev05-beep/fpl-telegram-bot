@@ -1,0 +1,9 @@
+services:
+  fpl-bot:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - fpl_data:/app/data
+volumes:
+  fpl_data:
