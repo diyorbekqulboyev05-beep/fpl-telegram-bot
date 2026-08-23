@@ -15,7 +15,7 @@ async def start(update, context): await update.message.reply_text('FPL bot tayyo
 @admin_only
 async def status(update, context): await update.message.reply_text(f'Bot: faol\nAuto posts: {settings.auto_posts_enabled}\nTimezone: {settings.timezone}')
 @admin_only
-async def schedule(update, context): await update.message.reply_text('09:00 — FPL News\n18:00 — Player Watch\nDeadline — 3 soat oldin\nGW yakuni — avtomatik')
+async def schedule(update, context): await update.message.reply_text(f'Deadline eslatmasi — {settings.deadline_hours} soat oldin\nJonli o‘yin kuzatuvi — o‘yin kunlari har daqiqada\n\n/captain va /players buyruqlari orqali istalgan vaqtda qo‘lda post olish mumkin.')
 @admin_only
 async def toggle(update, context):
     settings.auto_posts_enabled = update.message.text.strip() == '/on'; await update.message.reply_text(f'Auto posts: {settings.auto_posts_enabled}')
